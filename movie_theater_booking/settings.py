@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-*_fj1)s2$ti=&(m*z1srq2q4q1308x341*np$r*5901(l(6g&k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+<<<<<<< Updated upstream
+ALLOWED_HOSTS = ['app-tditmans-5.devedu.io', '127.0.0.1']
+=======
+ALLOWED_HOSTS = ['app-tditmans-5.devedu.io']
+>>>>>>> Stashed changes
 
 
 # Application definition
@@ -71,7 +75,7 @@ TEMPLATES = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',  # Allows any user to access
+        'rest_framework.permissions.AllowAny',  
     ]
 }
 

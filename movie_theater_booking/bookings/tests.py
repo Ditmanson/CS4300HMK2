@@ -1,21 +1,19 @@
 from django.test import TestCase
-from django.urls import reverse
-from .models import *
-from rest_framework import status
-# Create your tests here.
+from .models import Movie
+from django.utils import timezone
 
 class MovieModelTests(TestCase):
     def setUp(self):
         self.movie = Movie.objects.create(
             title='Test Movie',
             description='This is a test movie',
-            release_date='2024-09-27',
+            release_date=timezone.datetime(2024, 9, 27).date(),
             duration=120
         )
     
     def test_movie_model(self):
-        movie = Movie.objects.get(id=1)
+        movie = Movie.objects.get(id=self.movie.id)
         self.assertEqual(movie.title, 'Test Movie')
         self.assertEqual(movie.description, 'This is a test movie')
-        self.assertEqual(movie.release_date, '2024-09-27')
+        self.assertEqual(movie.release_date, timezone.datetime(2024, 9, 27).date())
         self.assertEqual(movie.duration, 120)
