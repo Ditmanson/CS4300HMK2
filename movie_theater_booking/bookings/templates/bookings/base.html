@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      {% block title %}
+        Welcome to My Movie Theater Booking
+      {% endblock %}
+    </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="jumbotron text-center bg-success text-white p-5 rounded mt-4">
+      <h1>Welcome to Homework- 2</h1>
+      <h2>My Movie Theater Booking</h2>
+    </div>
+
+    <div class="container">
+      {% block content %}
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle mt-2" type="button" id="moviesDropdown" data-bs-toggle="dropdown" aria-expanded="false">Movies</button>
+                <ul class="dropdown-menu" aria-labelledby="moviesDropdown">
+                  <li>
+                    <a class="dropdown-item" href="{% url 'movie_list_template' %}">Movies List</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'movie-list' %}">Add Movies</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle mt-2" type="button" id="seatsDropdown" data-bs-toggle="dropdown" aria-expanded="false">Seats</button>
+                <ul class="dropdown-menu" aria-labelledby="seatsDropdown">
+                  <li>
+                    <a class="dropdown-item" href="{% url 'seat-list' %}">Create Seats</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'seating' %}">Seat Availability</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle mt-2" type="button" id="bookingsDropdown" data-bs-toggle="dropdown" aria-expanded="false">Bookings</button>
+                <ul class="dropdown-menu" aria-labelledby="bookingsDropdown">
+                  <li>
+                    <a class="dropdown-item" href="{% url 'booking-list' %}">Create Booking</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'booking_history' %}">Booking History</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endblock %}
+    </div>
+
+    <div class="jumbotron text-center bg-success text-black p-5 rounded mt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <h4><a class="text-white" href="{% url 'index' %}"><button type="button" class="btn btn-outline-dark">Home</button></a></h4>
+          </div>
+          <div class="col-sm-4">
+            <h4><a class="text-white" href="https://opensource.org/license/MIT"><button type="button" class="btn btn-outline-dark">License</button></a></h4>
+          </div>
+          <div class="col-sm-4">
+            <h4><a class="text-white" href="https://canvas.uccs.edu"><button type="button" class="btn btn-outline-dark">CS4300</button></a></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
